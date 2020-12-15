@@ -39,7 +39,7 @@ public class TemplateApi {
                 .map(t -> {
                     t.setName(template.getName());
                     t.setFileName(template.getFileName());
-                    t.setTemplate(template.getTemplate());
+                    t.setContent(template.getContent());
                     return this.templateRepo.save(t);
                 })
                 .orElseThrow(() -> new RuntimeException("template id not found"));

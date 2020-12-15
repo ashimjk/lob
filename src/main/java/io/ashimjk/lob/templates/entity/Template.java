@@ -21,10 +21,12 @@ public class Template {
     @Column(name = "name")
     private String name;
 
+    @Lob
     @Column(name = "file_name")
-    private String fileName;
+    private byte[] fileName;
 
-    @Column(name = "template")
-    private String template;
+    @Lob
+    @Column(name = "content")
+    private String content;
 
 }
