@@ -4,7 +4,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <changeSet author="ashimjk" id="1608023159394-1">
+    <changeSet author="ashimjk" id="1608023159394-1" dbms="postgresql">
         <createTable tableName="template">
             <column name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="template_pkey"/>
@@ -15,7 +15,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="ashimjk" id="1608023159394-2">
+    <changeSet author="ashimjk" id="1608023159394-2" dbms="postgresql">
         <createSequence incrementBy="5"
                         minValue="1"
                         maxValue="9223372036854775807"

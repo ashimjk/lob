@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="ashimjk" id="1608027690963-1" dbms="h2">
+        <createSequence sequenceName="SEQ"/>
+    </changeSet>
+
+    <changeSet author="ashimjk" id="1608027690963-2" dbms="h2">
+        <createTable tableName="TEMPLATE">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_D"/>
+            </column>
+            <column name="CONTENT" type="CLOB"/>
+            <column name="FILE_NAME" type="BLOB"/>
+            <column name="NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
