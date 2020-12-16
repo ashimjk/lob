@@ -5,11 +5,14 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <changeSet author="ashimjk" id="1608029141778-1" dbms="oracle">
-        <createSequence incrementBy="5" maxValue="9999999999999999999999999999" sequenceName="SEQ" startValue="200"/>
+        <createSequence incrementBy="5"
+                        maxValue="9999999999999999999999999999"
+                        sequenceName="SEQ"
+                        startValue="200"/>
     </changeSet>
 
     <changeSet author="ashimjk" id="1608029141778-2" dbms="oracle">
-        <createTable tableName="TEMPLATE" tablespace="SIB_DB">
+        <createTable tableName="TEMPLATE">
             <column name="ID" type="NUMBER(19, 0)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="SYS_C007377"/>
             </column>

@@ -21,6 +21,53 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>postgres</id>
+            <properties>
+                <springProfile>postgres</springProfile>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>h2</id>
+            <properties>
+                <springProfile>h2</springProfile>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>oracle</id>
+            <properties>
+                <springProfile>oracle</springProfile>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.oracle.database.jdbc</groupId>
+                    <artifactId>ojdbc8</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -38,24 +85,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!--<dependency>-->
-        <!--    <groupId>org.postgresql</groupId>-->
-        <!--    <artifactId>postgresql</artifactId>-->
-        <!--    <scope>runtime</scope>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--    <groupId>com.h2database</groupId>-->
-        <!--    <artifactId>h2</artifactId>-->
-        <!--    <scope>runtime</scope>-->
-        <!--</dependency>-->
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -70,7 +99,6 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <!--<version>4.3.2</version>-->
         </dependency>
     </dependencies>
 
