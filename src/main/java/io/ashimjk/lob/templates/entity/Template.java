@@ -29,4 +29,14 @@ public class Template {
     @Column(name = "content")
     private String content;
 
+    @Column(name = "body")
+    private String body;
+
+    public Template merge(Template template) {
+        this.setName(template.getName());
+        this.setFileName(template.getFileName());
+        this.setContent(template.getContent());
+        this.setBody(template.getBody());
+        return this;
+    }
 }

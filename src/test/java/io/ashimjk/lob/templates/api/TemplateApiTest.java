@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.io.InputStream;
@@ -16,6 +17,7 @@ import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
+@ActiveProfiles("postgres")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class TemplateApiTest {
@@ -48,6 +50,7 @@ class TemplateApiTest {
         template.setName("test");
         template.setFileName(getFileName());
         template.setContent("<p>testing template</p>");
+        template.setBody("<p>testing template</p>");
         return template;
     }
 

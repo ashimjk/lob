@@ -28,7 +28,36 @@
             <column name="CONTENT" type="${CLOB_TYPE}"/>
             <column name="FILE_NAME" type="${BLOB_TYPE}"/>
             <column name="NAME" type="VARCHAR(255)"/>
+            <column name="BODY" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
+
+    <changeSet author="ashimjk" id="1608029141778-3" dbms="!oracle">
+        <modifyDataType tableName="TEMPLATE"
+                        columnName="BODY"
+                        newDataType="VARCHAR(4000)"/>
+    </changeSet>
+
+    <!--<changeSet author="ashimjk" id="1608029141778-3" dbms="!oracle">-->
+    <!--    <modifyDataType tableName="TEMPLATE"-->
+    <!--                    columnName="CONTENT"-->
+    <!--                    newDataType="${CLOB_TYPE}"/>-->
+    <!--</changeSet>-->
+
+    <!--<changeSet author="ashimjk" id="1608029141778-3a">-->
+    <!--    <addColumn tableName="TEMPLATE">-->
+    <!--        <column name="CONTENT_NEW" type="${CLOB_TYPE}"/>-->
+    <!--    </addColumn>-->
+
+    <!--    <update tableName="TEMPLATE">-->
+    <!--        <column name="CONTENT_NEW" valueComputed="CONTENT"/>-->
+    <!--    </update>-->
+
+    <!--    <addNotNullConstraint tableName="TEMPLATE" columnName="CONTENT_NEW"/>-->
+
+    <!--    <dropColumn tableName="TEMPLATE" columnName="CONTENT"/>-->
+
+    <!--    <renameColumn tableName="TEMPLATE" oldColumnName="CONTENT_NEW" newColumnName="CONTENT"/>-->
+    <!--</changeSet>-->
 
 </databaseChangeLog>

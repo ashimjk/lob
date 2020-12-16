@@ -36,12 +36,8 @@ public class TemplateApi {
     public ResponseEntity<Template> updateTemplate(@PathVariable long id, @RequestBody Template template) {
         Optional<Template> updatedTemplate = this.templateRepo.findById(id);
         updatedTemplate
-                .map(t -> {
-                    t.setName(template.getName());
-                    t.setFileName(template.getFileName());
-                    t.setContent(template.getContent());
-                    return this.templateRepo.save(t);
-                })
+                .map(t -> t.merge(template))
+                .map(templateRepo::save)
                 .orElseThrow(() -> new RuntimeException("template id not found"));
 
         return ResponseEntity.of(updatedTemplate);
