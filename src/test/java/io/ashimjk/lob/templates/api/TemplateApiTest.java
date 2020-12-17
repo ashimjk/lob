@@ -17,7 +17,7 @@ import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-@ActiveProfiles("postgres")
+@ActiveProfiles("h2")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class TemplateApiTest {
